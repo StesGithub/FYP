@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S3 File Uploader</title>
+
+</head>
+
+<body>
+    <div id="loginSection">
+        <h2>Please log in to continue</h2>
+        <button onclick="login()">Login</button>
+    </div>
+
+    <div id="appSection" style="display:none;">
+        <h1>Hospital File Management System</h1>
+        <p id="welcomeMessage"></p>
+        <button onclick="logout()">Logout</button>
+        <hr>
+        <input type="file" id="fileInput" />
+        <button onclick="uploadFile()">Upload</button>
+        <p id="status"></p>
+        <button onclick="listFiles()">Refresh Files</button>
+        <table id="fileTable" style="margin-top: 20px; width: 100%;">
+            <thead>
+                <tr>
+                    <th>File Name</th>
+                    <th>Size</th>
+                    <th>Upload Date</th>
+                </tr>
+            </thead>
+            <tbody id="fileList">
+                <tr>
+                    <td colspan="3">No files loaded yet</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
