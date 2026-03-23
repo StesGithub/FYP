@@ -4,6 +4,8 @@ import pickle
 from sklearn.pipeline import Pipeline
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.svm import LinearSVC
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
 from tqdm import tqdm 
@@ -83,36 +85,79 @@ X_train, X_test, y_train, y_test = train_test_split(
 print(f"\nTraining samples: {len(X_train)}")
 print(f"Testing samples: {len(X_test)}")
 
-#TODO random forest for now - will need to look into other algorihtms and tuning
-#TODO Full inquiry into different algorithms Naive Bayes, Logisitic regression, Linear SVM (Maybe)
-pipeline = Pipeline([
+
+#Fully integrated logisitic regression, randomforst, linearSVC comparison model 
+#This will score each algorithm based on accuarcy to determine the appropriate algorithm for sklearn moving forward
+models = {
+    'Random Forest': RandomForestClassifier(
+        n_estimators=100,
+        random_state=42,
+        n_jobs=-1,
+        class_weight='balanced'
+    ),
+    'Logistic Regression': LogisticRegression(
+        random_state=42,
+        max_iter=1000,
+        class_weight='balanced'
+    ),
+    'Linear SVM': LinearSVC(
+        random_state=42,
+        max_iter=1000,
+        class_weight='balanced'
+    )
+}
+
+results = {}
+
+for name, clf in models.items():
+    print(f"\nTraining {name}...")
+    
+    pipeline = Pipeline([
+        ('tfidf', TfidfVectorizer(
+            max_features=10000,
+            ngram_range=(1, 2),
+            stop_words='english',
+            min_df=2
+        )),
+        ('clf', clf)
+    ])
+    
+    pipeline.fit(X_train, y_train)
+    y_pred = pipeline.predict(X_test)
+    accuracy = accuracy_score(y_test, y_pred)
+    results[name] = accuracy
+    
+    print(f"{name} Training complete!")
+    print(f"Accuracy: {accuracy:.4f}")
+    print(classification_report(y_test, y_pred))
+
+#Summary comparison
+print("\n" + "="*50)
+print("MODEL COMPARISON SUMMARY")
+print("="*50)
+for name, accuracy in results.items():
+    print(f"{name}: {accuracy:.4f}")
+
+# ave best model
+best_model_name = max(results, key=results.get)
+print(f"\nBest model: {best_model_name} ({results[best_model_name]:.4f})")
+
+#Retrain and save best model
+print(f"\nRetraining and saving {best_model_name}...")
+
+best_pipeline = Pipeline([
     ('tfidf', TfidfVectorizer(
         max_features=10000,
         ngram_range=(1, 2),
         stop_words='english',
         min_df=2
     )),
-    ('clf', RandomForestClassifier(
-        n_estimators=100,
-        random_state=42,
-        n_jobs=-1,
-        verbose=1  
-    ))
+    ('clf', models[best_model_name])
 ])
 
-# Train
-print("\nTraining model...")
-pipeline.fit(X_train, y_train)
-print("Training complete!")
+best_pipeline.fit(X_train, y_train)
 
-# Evaluate
-y_pred = pipeline.predict(X_test)
-print(f"\nAccuracy: {accuracy_score(y_test, y_pred):.4f}")
-print("\nClassification Report:")
-print(classification_report(y_test, y_pred))
+with open('model1.1.pkl', 'wb') as f:
+    pickle.dump(best_pipeline, f)
 
-#Save model
-with open('model.pkl', 'wb') as f:
-    pickle.dump(pipeline, f)
-
-print("\nModel saved as model.pkl")
+print(f"{best_model_name} saved as model1.1.pkl!")
