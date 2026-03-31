@@ -109,6 +109,12 @@ async function listFiles() {
         <td>${file.fileName}</td>
         <td>${file.size}</td>
         <td>${file.lastModified}</td>
+        <td>
+            <button onclick="deleteFile('${file.fileName}')" 
+                style="background: #ff1900; color: white; border: none; padding: 5px 10px; border-radius: 4px; cursor: pointer;">
+                Delete
+            </button>
+        </td>
     </tr>
 `).join('');
 
@@ -188,4 +194,32 @@ function getBadgeClass(level) {
 
 function getModelBadge(model) {
     return model === 'ML_SKLEARN' ? 'badge-sklearn' : 'badge-comprehend';
+}
+
+async function deleteFile(fileName) {
+    if (!confirm(`Are you sure you want to permanently delete ${fileName}? This cannot be undone.`)) return;
+
+    const status = document.getElementById('status');
+    status.textContent = `Deleting ${fileName}...`;
+
+    try {
+        const response = await fetch(`https://s6gly9n709.execute-api.eu-west-1.amazonaws.com/dev/delete?fileKey=${encodeURIComponent(fileName)}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const raw = await response.json();
+        const result = typeof raw.body === 'string' ? JSON.parse(raw.body) : raw;
+
+        if (response.ok) {
+            status.textContent = `${fileName} deleted successfully`;
+            listFiles();
+        } else {
+            status.textContent = `${result.message || 'Delete failed'}`;
+        }
+    } catch (error) {
+        status.textContent = `Delete failed: ${error.message}`;
+    }
 }
