@@ -1,0 +1,13 @@
+FROM public.ecr.aws/lambda/python:3.12
+
+# Install dependencies
+RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
+RUN pip install transformers boto3 numpy
+
+# Copy model files
+COPY biobert_model_final/ ./biobert_model_final/
+
+# Copy Lambda function
+COPY biobert_lambda.py ./lambda_function.py
+
+CMD ["lambda_function.lambda_handler"]
