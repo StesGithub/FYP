@@ -8,7 +8,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
 import pickle
 
-# Check GPU
+#Check GPU
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 print(f"Using device: {device}")
 
@@ -74,7 +74,7 @@ def map_sensitivity(specialty):
 
 df_medical['access_level'] = df_medical['medical_specialty'].apply(map_sensitivity)
 
-# MTSamples only
+#MTSamples only
 df = df_medical[['transcription', 'access_level']].copy()
 
 print(f"Total samples: {len(df)}")

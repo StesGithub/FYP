@@ -1,0 +1,26 @@
+***
+
+## MedSource Supply Co.
+1200 Medical Lane, Suite 300 | (555) 901-SUPP
+**INVOICE** | **Invoice ID:** INV-8472 | **Date:** October 26, 2023
+
+**Billed To:** Metropolitan General Hospital
+Attn: Purchasing Department
+
+---
+
+**DESCRIPTION OF GOODS** | **QTY** | **UNIT PRICE** | **LINE TOTAL**
+:---|:---:|:---:|---:
+Sterile Saline Solution (1L) | 12 | $8.50 | $102.00
+Disposable Catheterization Kit | 8 | $45.00 | $360.00
+Antiseptic Wound Care Swabs | 15 | $12.95 | $194.25
+Non-Adherent Surgical Dressing | 4 | $22.00 | $88.00
+Personal Protective Equipment (PPE) Packs | 25 | $6.75 | $168.75
+
+**SUBTOTAL:** | | | **$813.00**
+**SALES TAX (6%):** | | | $48.78
+**TOTAL DUE:** | | | **$861.78**
+
+---
+**Payment Terms:** Net 30 Days. Thank you for your continued partnership. Please reference Invoice ID INV-8472 for payment.
+***

@@ -6,12 +6,12 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score
 
-# Load original dataset
+#Load original dataset
 df_medical = pd.read_csv('data/mtsamples.csv')
 df_medical['medical_specialty'] = df_medical['medical_specialty'].str.strip()
 df_medical = df_medical.dropna(subset=['transcription'])
 
-# Map sensitivity
+#Map sensitivity
 def map_sensitivity(specialty):
     restricted = [
         'Surgery', 'Cardiovascular / Pulmonary', 'Neurology',
@@ -42,10 +42,10 @@ def map_sensitivity(specialty):
 
 df_medical['access_level'] = df_medical['medical_specialty'].apply(map_sensitivity)
 
-# Load generated public data
+#Load generated public data
 df_public = pd.read_csv('data/generated_public_data.csv')
 
-# Combine datasets
+#Combine datasets
 df_combined = pd.concat([
     df_medical[['transcription', 'access_level']],
     df_public[['transcription', 'access_level']]
@@ -55,11 +55,11 @@ print(f"Combined dataset size: {len(df_combined)}")
 print("Class distribution:")
 print(df_combined['access_level'].value_counts())
 
-# Features and labels
+#Features and labels
 X = df_combined['transcription']
 y = df_combined['access_level']
 
-# Train test split
+#Train test split
 X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, random_state=42, stratify=y
 )
@@ -67,7 +67,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 print(f"\nTraining samples: {len(X_train)}")
 print(f"Testing samples: {len(X_test)}")
 
-# Train Logistic Regression
+#Train Logistic Regression
 print("\nTraining Logistic Regression...")
 pipeline = Pipeline([
     ('tfidf', TfidfVectorizer(
@@ -90,7 +90,7 @@ print(f"Accuracy: {accuracy_score(y_test, y_pred):.4f}")
 print("\nClassification Report:")
 print(classification_report(y_test, y_pred))
 
-# Save model
+#Save model
 with open('model1.2.pkl', 'wb') as f:
     pickle.dump(pipeline, f)
 

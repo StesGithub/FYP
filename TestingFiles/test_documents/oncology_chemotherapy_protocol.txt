@@ -1,0 +1,19 @@
+***Disclaimer: This note is generated for educational purposes and should not be used as actual medical advice or documentation.***
+
+***
+
+**Date:** 10/25/2023
+**Subjective:** Pt reports mild nausea (rated 2/10), manageable with antiemetics. No new pain or rash noted.
+**Objective:** Vitals stable. Labs drawn today (CBC, CMP).
+
+**Assessment:** Status post initial cycle of chemotherapy for locally advanced Stage III Colon Adenocarcinoma. Patient is tolerating regimen well, anticipating prophylactic management for anticipated Grade 2 neutropenia.
+
+**Plan/Treatment:**
+**Protocol:** FOLFOX (Folinutrid, Leucovorin, Oxaliplatin).
+**Dosage (Cycle 2):**
+1.  Oxaliplatin: 1.4 mg/m² IV over 2 hours.
+2.  Leucovorin: 200 mcg/m² IV over 2 hours.
+3.  Folinutrid: 2400 mg IV over 2 hours.
+
+**Monitoring Plan:**
+Pt instructed to monitor for signs of peripheral neuropathy (paresthesias in hands/feet) and mucositis. Due to risk of myelosuppression, scheduled repeat CBC and CMP in 7 days. Prophylactic administration of Ondansetron and Doliprol Contin was completed today. Strict adherence to hand hygiene and hydration emphasized. Follow up required if fever develops (>100.4°F).

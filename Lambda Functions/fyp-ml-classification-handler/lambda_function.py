@@ -12,7 +12,6 @@ audit_table = dynamodb.Table('AuditLog')
 
 MODEL_BUCKET = 'fyp-hospital-s3-bucket'
 MODEL_KEY = 'model/model_final_sklearn.pkl'
-CONFIDENCE_THRESHOLD = 0.7
 
 def load_model():
     print("Loading model from S3...")
@@ -42,13 +41,9 @@ def lambda_handler(event, context):
         prediction = model.predict([file_text])[0]
         confidence = float(max(model.predict_proba([file_text])[0]))
 
-        if confidence < CONFIDENCE_THRESHOLD:
-            print(f"Low confidence ({confidence:.4f}) applying QUARANTINE classification")
-            prediction = 'QUARANTINE'
-
         print(f"Classification: {prediction} ({confidence:.4f})")
 
-        #Write to DynamoDB
+        # Write to DynamoDB
         classification_id = str(uuid.uuid4())
         timestamp = datetime.utcnow().isoformat()
 

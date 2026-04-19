@@ -1,0 +1,27 @@
+***
+
+## DISCHARGE SUMMARY
+
+**Patient:** Mr. Robert Chen
+**MRN:** 901234
+**Admission Date:** 10/25/2023
+**Discharge Date:** 10/28/2023
+
+**Primary Diagnosis:** Acute exacerbation of Chronic Heart Failure (CHF), Nontransplant.
+**Secondary Diagnoses:** Essential Hypertension, Hyperlipidemia.
+
+**Summary:** Mr. Chen was admitted for increasing dyspnea and peripheral edema, consistent with CHF exacerbation. His status has improved significantly over the course of hospitalization with medical management including diuresis and fluid restriction. His condition is stable for discharge.
+
+**Discharge Medications:**
+1. **Lisinopril** 10mg PO daily (for blood pressure)
+2. **Carvedilol** 6.25mg PO twice daily (for heart rate control)
+3. **Furosemide** 40mg PO daily (diuretic)
+4. **Atorvastatin** 20mg PO nightly (for cholesterol)
+
+**Diet & Activity:** Strict adherence to a low-sodium diet (<2g/day) and fluid restriction is mandatory. Gradual increase in activity is encouraged, but caution must be used during exertion.
+
+**Follow-Up Instructions:**
+Follow up with Cardiology in the office in **one week (11/4/2023)** for follow-up labs and medication titration. Call the clinic immediately if experiencing shortness of breath, rapid weight gain (>3 lbs in 3 days), or swelling of the legs.
+
+***
+**(Word Count: Approx. 185 words)**

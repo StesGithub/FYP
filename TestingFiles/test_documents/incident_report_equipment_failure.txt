@@ -1,0 +1,16 @@
+**HOSPITAL INCIDENT REPORT**
+**Facility:** West Wing, Ward C
+**Date:** October 26, 2023
+**Time:** 14:15
+
+**Incident Type:** Equipment Malfunction (Non-Patient Related)
+**Equipment:** Model IV-Pump 7000
+**Observed By:** J. Ramirez (Registered Nurse, Ward C)
+
+**Report:**
+At approximately 14:15, a critical failure was noted on an IV-Pump 7000 unit located near bed 4. The device suddenly ceased operation and displayed an unrecoverable Error Code E-71. The failure was mechanical, preventing the programmed infusion flow.
+
+Registered Nurse J. Ramirez immediately isolated the pump and initiated the backup manual flow protocol. The incident was promptly reported to the supervising charge nurse, M. Davies (Charge Nurse, Ward C). Biomed Technician T. Khan (Biomedical Engineering Department) was immediately dispatched to the unit. Mr. Khan assessed the unit and determined the power supply module was faulty. A replacement pump was utilized successfully, and the damaged unit was tagged for repair. The incident was documented and logged with the Biomedical Engineering Department for further review.
+
+**Report Completed By:** J. Ramirez
+**Reviewed By:** M. Davies

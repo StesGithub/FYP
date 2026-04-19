@@ -1,0 +1,124 @@
+{
+    "configurations": [
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "s3-list-files-handler:lambda_function.lambda_handler (python3.14)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/s3-list-files-handler",
+                "lambdaHandler": "lambda_function.lambda_handler"
+            },
+            "lambda": {
+                "runtime": "python3.14",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "s3-file-upload-handler:lambda_function.lambda_handler (python3.14)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/s3-file-upload-handler",
+                "lambdaHandler": "lambda_function.lambda_handler"
+            },
+            "lambda": {
+                "runtime": "python3.14",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "ml-comprehend-handler:lambda_function.lambda_handler (python3.14)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/ml-comprehend-handler",
+                "lambdaHandler": "lambda_function.lambda_handler"
+            },
+            "lambda": {
+                "runtime": "python3.14",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "get-classifications-dynamo-handler:lambda_function.lambda_handler (python3.14)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/get-classifications-dynamo-handler",
+                "lambdaHandler": "lambda_function.lambda_handler"
+            },
+            "lambda": {
+                "runtime": "python3.14",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "fyp-ml-classification-handler:lambda_function.lambda_handler (python3.14)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/fyp-ml-classification-handler",
+                "lambdaHandler": "lambda_function.lambda_handler"
+            },
+            "lambda": {
+                "runtime": "python3.14",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "file-access-handler:lambda_function.lambda_handler (python3.14)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/file-access-handler",
+                "lambdaHandler": "lambda_function.lambda_handler"
+            },
+            "lambda": {
+                "runtime": "python3.14",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "delete-files-handler:lambda_function.lambda_handler (python3.14)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/delete-files-handler",
+                "lambdaHandler": "lambda_function.lambda_handler"
+            },
+            "lambda": {
+                "runtime": "python3.14",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        },
+        {
+            "type": "aws-sam",
+            "request": "direct-invoke",
+            "name": "admin-reclassify-handler:lambda_function.lambda_handler (python3.14)",
+            "invokeTarget": {
+                "target": "code",
+                "projectRoot": "${workspaceFolder}/admin-reclassify-handler",
+                "lambdaHandler": "lambda_function.lambda_handler"
+            },
+            "lambda": {
+                "runtime": "python3.14",
+                "payload": {},
+                "environmentVariables": {}
+            }
+        }
+    ]
+}
