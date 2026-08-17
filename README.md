@@ -1,6 +1,6 @@
 This project contains the code portion of my Final Year Project: MedVault for my BSc of Computer Science.
 
-For a full technical overview and consult the report titled ***.pdf.
+For a full technical overview and consult the report titled C21394693FinalProjectReport.pdf.
 
 Within the sub-folders can be found all code pertaining to the project including front-end: HTML, CSS & JS, as well as back-end Lambda scripts pulled directly from the AWS project.
 Also contained within this project is the Python scripts pertaining to model training as well as the serialized pkl files of the final models.
